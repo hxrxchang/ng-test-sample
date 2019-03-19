@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MemoService } from './../../services/memo.service';
 
 @Component({
   selector: 'app-memo-list',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./memo-list.component.scss']
 })
 export class MemoListComponent implements OnInit {
-
-  constructor() { }
+  constructor(private memoService: MemoService) {}
 
   ngOnInit() {
+    const memo = { id: '12', content: 'hoge' };
+    this.memoService.addMemo(memo).subscribe(data => {
+      this.memoService.getMemoList().subscribe(memoList => {
+        console.log(memoList);
+      });
+    });
   }
-
 }
