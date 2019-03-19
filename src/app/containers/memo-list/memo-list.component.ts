@@ -10,8 +10,11 @@ export class MemoListComponent implements OnInit {
   constructor(private memoService: MemoService) {}
 
   ngOnInit() {
-    this.memoService.getMemoList().subscribe(memoList => {
-      console.log(memoList);
+    const memo = { id: '12', content: 'hoge' };
+    this.memoService.addMemo(memo).subscribe(data => {
+      this.memoService.getMemoList().subscribe(memoList => {
+        console.log(memoList);
+      });
     });
   }
 }
