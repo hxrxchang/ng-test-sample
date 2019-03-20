@@ -12,9 +12,10 @@ import { MemoListComponent } from './containers/memo-list/memo-list.component';
 import { TopComponent } from './pages/top/top.component';
 
 import { InMemoryDataService } from './in-mem/in-memory-data.service';
+import { UploadComponent } from './containers/upload/upload.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, MemoListComponent, TopComponent],
+  declarations: [AppComponent, FormComponent, MemoListComponent, TopComponent, UploadComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
