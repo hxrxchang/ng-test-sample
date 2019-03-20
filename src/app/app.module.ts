@@ -6,16 +6,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppRoutingModule } from './app-routing.module';
+
+// app
 import { AppComponent } from './app.component';
-import { FormComponent } from './containers/form/form.component';
-import { MemoListComponent } from './containers/memo-list/memo-list.component';
+// pages
 import { TopComponent } from './pages/top/top.component';
+// containers
+import { MemoListComponent } from './containers/memo-list/memo-list.component';
+import { UploadComponent } from './containers/upload/upload.component';
+// components
+import { FormComponent } from './components/form/form.component';
 
 import { InMemoryDataService } from './in-mem/in-memory-data.service';
-import { UploadComponent } from './containers/upload/upload.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, MemoListComponent, TopComponent, UploadComponent],
+  declarations: [
+    AppComponent,
+    MemoListComponent,
+    TopComponent,
+    UploadComponent,
+    FormComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
