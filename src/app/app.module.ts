@@ -4,18 +4,32 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material/material.module';
-import { AppComponent } from './app.component';
-import { FormComponent } from './containers/form/form.component';
-import { MemoListComponent } from './containers/memo-list/memo-list.component';
-import { TopComponent } from './pages/top/top.component';
-
 import { InMemoryDataService } from './in-mem/in-memory-data.service';
 
+// app
+import { AppComponent } from './app.component';
+// pages
+import { TopComponent } from './pages/top/top.component';
+// containers
+import { MemoListComponent } from './containers/memo-list/memo-list.component';
+import { UploadComponent } from './containers/upload/upload.component';
+// components
+import { FormComponent } from './components/form/form.component';
+import { ButtonComponent } from './components/button/button.component';
+import { MemoItemComponent } from './components/memo-item/memo-item.component';
+
 @NgModule({
-  declarations: [AppComponent, FormComponent, MemoListComponent, TopComponent],
+  declarations: [
+    AppComponent,
+    MemoListComponent,
+    TopComponent,
+    UploadComponent,
+    FormComponent,
+    ButtonComponent,
+    MemoItemComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

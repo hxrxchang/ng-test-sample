@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { Memo } from 'src/app/models/memo';
 import { MemoService } from './../../services/memo.service';
 
 @Component({
@@ -7,14 +10,14 @@ import { MemoService } from './../../services/memo.service';
   styleUrls: ['./memo-list.component.scss']
 })
 export class MemoListComponent implements OnInit {
+  memoList$: Observable<Memo[]>;
   constructor(private memoService: MemoService) {}
 
   ngOnInit() {
-    const memo = { id: '12', content: 'hoge' };
-    this.memoService.addMemo(memo).subscribe(data => {
-      this.memoService.getMemoList().subscribe(memoList => {
-        console.log(memoList);
-      });
-    });
+    this.fetchMemoList();
+  }
+
+  fetchMemoList() {
+    this.memoList$ = this.memoService.getMemoList();
   }
 }
