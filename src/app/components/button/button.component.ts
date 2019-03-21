@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ButtonComponent implements OnInit {
   @Input()
   content: string;
+  @Input()
+  disabled: boolean;
 
   constructor() {}
 
