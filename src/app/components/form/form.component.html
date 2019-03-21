@@ -1,3 +1,13 @@
-<mat-form-field>
-  <input matInput placeholder="What needs to be done ?" />
-</mat-form-field>
+<form [formGroup]="uploadFromGroup">
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="memoContent"
+      placeholder="What needs to be done ?"
+    />
+  </mat-form-field>
+  <app-button
+    [content]="'add'"
+    [disabled]="uploadFromGroup.invalid"
+  ></app-button>
+</form>

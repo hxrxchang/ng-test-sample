@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-upload',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent implements OnInit {
+  uploadFromGroup = this.fb.group({
+    memoContent: ['', Validators.required]
+  });
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
