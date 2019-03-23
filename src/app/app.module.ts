@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app-routing.module';
@@ -40,7 +42,8 @@ import { MemoItemComponent } from './components/memo-item/memo-item.component';
     ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       passThruUnknownUrl: true
-    })
+    }),
+    StoreModule.forRoot(reducers, { metaReducers })
   ],
   providers: [],
   bootstrap: [AppComponent]
