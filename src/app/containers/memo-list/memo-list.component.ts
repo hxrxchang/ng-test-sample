@@ -6,6 +6,7 @@ import { Memo } from 'src/app/models/memo';
 import { MemoService } from './../../services/memo.service';
 import { RootStoreState } from './../../root-store';
 import { MemoStoreSelectors } from 'src/app/root-store/memo-store';
+import { MemoStoreActions } from './../../root-store/memo-store';
 
 @Component({
   selector: 'app-memo-list',
@@ -20,6 +21,7 @@ export class MemoListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.store.dispatch(new MemoStoreActions.FetchMemoListRequestAction());
     this.memoList$ = this.store.pipe(select(MemoStoreSelectors.selectMemoList));
   }
 }
