@@ -1,3 +1,8 @@
-<button mat-raised-button color="primary" [disabled]="disabled">
+<button
+  mat-raised-button
+  color="primary"
+  [disabled]="disabled"
+  (click)="onClickButton()"
+>
   {{ content }}
 </button>
