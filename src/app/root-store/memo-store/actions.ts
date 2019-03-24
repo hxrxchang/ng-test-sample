@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { Memo } from 'src/app/models/memo';
 
 export enum ActionTypes {
   FETCH_MEMO_LIST_REQUEST = '[Memo] Fetch Memo List Request',
@@ -13,14 +14,17 @@ export class FetchMemoListRequestAction implements Action {
 
 export class FetchMemoListSuccessAction implements Action {
   readonly type = ActionTypes.FETCH_MEMO_LIST_SUCCESS;
+  constructor(public payload: Memo[]) {}
 }
 
 export class AddMemoRequestAction implements Action {
   readonly type = ActionTypes.ADD_MEMO_REQUEST;
+  constructor(public payload: Memo) {}
 }
 
 export class AddMemoSuccessAction implements Action {
   readonly type = ActionTypes.ADD_MEMO_SUCCESS;
+  constructor(public payload: Memo) {}
 }
 
 export type ActionUnion =
