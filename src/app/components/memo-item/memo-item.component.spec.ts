@@ -8,14 +8,14 @@ describe('MemoItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MemoItemComponent ]
-    })
-    .compileComponents();
+      declarations: [MemoItemComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MemoItemComponent);
     component = fixture.componentInstance;
+    component.memoItem = { id: '1', content: 'hello' };
     fixture.detectChanges();
   });
 

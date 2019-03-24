@@ -12,10 +12,6 @@ import { MemoStoreActions } from '../../root-store/memo-store';
   styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent implements OnInit {
-  uploadFromGroup = this.fb.group({
-    memoContent: ['', Validators.required]
-  });
-
   constructor(
     private fb: FormBuilder,
     private store: Store<RootStoreState.State>
@@ -23,13 +19,12 @@ export class UploadComponent implements OnInit {
 
   ngOnInit() {}
 
-  upload() {
+  upload(content) {
     const memo = {
       id: uuidv1(),
-      content: this.uploadFromGroup.value.memoContent
+      content
     };
 
     this.store.dispatch(new MemoStoreActions.AddMemoRequestAction(memo));
-    this.uploadFromGroup.reset();
   }
 }
