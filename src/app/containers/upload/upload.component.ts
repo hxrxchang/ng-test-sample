@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MemoService } from './../../services/memo.service';
+import { Store } from '@ngrx/store';
+import * as uuidv1 from 'uuid';
+
+import { RootStoreState } from './../../root-store';
+import { MemoStoreActions } from '../../root-store/memo-store';
 
 @Component({
   selector: 'app-upload',
@@ -12,14 +16,20 @@ export class UploadComponent implements OnInit {
     memoContent: ['', Validators.required]
   });
 
-  constructor(private fb: FormBuilder, private memoService: MemoService) {}
+  constructor(
+    private fb: FormBuilder,
+    private store: Store<RootStoreState.State>
+  ) {}
 
   ngOnInit() {}
 
   upload() {
-    const memoContent = this.uploadFromGroup.value.memoContent;
-    this.memoService
-      .addMemo({ id: '111', content: memoContent })
-      .subscribe(data => console.log(data));
+    const memo = {
+      id: uuidv1(),
+      content: this.uploadFromGroup.value.memoContent
+    };
+
+    this.store.dispatch(new MemoStoreActions.AddMemoRequestAction(memo));
+    this.uploadFromGroup.reset();
   }
 }

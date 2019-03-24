@@ -12,13 +12,11 @@ export function memoReducer(
       return { ...state, memoList: action.payload };
     case ActionTypes.ADD_MEMO_REQUEST:
       return state;
-    case ActionTypes.ADD_MEMO_REQUEST:
-      // const addedMemoList: Memo[] = state.memoList.push(action.payload);
-      // return {
-      //   ...state,
-      //   memoList: addedMemoList
-      // };
-      return state;
+    case ActionTypes.ADD_MEMO_SUCCESS:
+      return {
+        ...state,
+        memoList: [...state.memoList, action.payload]
+      };
     default:
       return state;
   }

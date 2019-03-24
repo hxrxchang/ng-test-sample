@@ -30,9 +30,11 @@ export class MemoEffects {
   add$: Observable<Action> = this.actions$.pipe(
     ofType(MemoActions.ActionTypes.ADD_MEMO_REQUEST),
     concatMap(action =>
-      this.memoService
-        .addMemo(action.payload)
-        .pipe(map(memo => new MemoActions.AddMemoSuccessAction(memo)))
+      this.memoService.addMemo(action.payload).pipe(
+        map(memo => {
+          return new MemoActions.AddMemoSuccessAction(memo);
+        })
+      )
     )
   );
 }
