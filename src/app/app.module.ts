@@ -22,6 +22,7 @@ import { UploadComponent } from './containers/upload/upload.component';
 import { FormComponent } from './components/form/form.component';
 import { ButtonComponent } from './components/button/button.component';
 import { MemoItemComponent } from './components/memo-item/memo-item.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MemoItemComponent } from './components/memo-item/memo-item.component';
     UploadComponent,
     FormComponent,
     ButtonComponent,
-    MemoItemComponent
+    MemoItemComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
