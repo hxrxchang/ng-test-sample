@@ -8,9 +8,8 @@ describe('ButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [ButtonComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +20,11 @@ describe('ButtonComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should call onClickButton() method', () => {
+    spyOn(component.clickButton, 'emit');
+    component.onClickButton();
+    expect(component.clickButton.emit).toHaveBeenCalled();
   });
 });
