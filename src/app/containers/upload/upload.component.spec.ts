@@ -2,12 +2,14 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Store } from '@ngrx/store';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { UploadComponent } from './upload.component';
 import { RootStoreModule } from './../../root-store/root-store.module';
 import { RootStoreState } from './../../root-store';
 import { MemoStoreActions } from './../../root-store/memo-store';
-import { Store } from '@ngrx/store';
+import { InMemoryDataService } from './../../in-mem/in-memory-data.service';
 
 describe('UploadComponent', () => {
   let component: UploadComponent;
@@ -18,7 +20,12 @@ describe('UploadComponent', () => {
     TestBed.configureTestingModule({
       declarations: [UploadComponent],
       schemas: [NO_ERRORS_SCHEMA],
-      imports: [ReactiveFormsModule, RootStoreModule, HttpClientModule]
+      imports: [
+        ReactiveFormsModule,
+        RootStoreModule,
+        HttpClientModule,
+        HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+      ]
     }).compileComponents();
   }));
 
