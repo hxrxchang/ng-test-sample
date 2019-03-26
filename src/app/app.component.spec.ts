@@ -25,4 +25,8 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     expect(component).toBeTruthy();
   });
+
+  it('タイトルが正しいこと', () => {
+    expect(component.title).toBe('ng-test-sample');
+  });
 });

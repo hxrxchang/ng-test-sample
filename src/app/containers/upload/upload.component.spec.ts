@@ -5,10 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { UploadComponent } from './upload.component';
 import { RootStoreModule } from './../../root-store/root-store.module';
+import { RootStoreState } from './../../root-store';
+import { MemoStoreActions } from './../../root-store/memo-store';
+import { Store } from '@ngrx/store';
 
 describe('UploadComponent', () => {
   let component: UploadComponent;
   let fixture: ComponentFixture<UploadComponent>;
+  let store: Store<RootStoreState.State>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -22,9 +26,23 @@ describe('UploadComponent', () => {
     fixture = TestBed.createComponent(UploadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    store = TestBed.get(Store);
+    spyOn(store, 'dispatch').and.callThrough();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should call upload() method', () => {
+    const memo = {
+      id: '12345',
+      content: 'hello'
+    };
+    const addMemoRequestAction = new MemoStoreActions.AddMemoRequestAction(
+      memo
+    );
+    component.upload(memo);
+    expect(store.dispatch).toHaveBeenCalledWith(addMemoRequestAction);
   });
 });
