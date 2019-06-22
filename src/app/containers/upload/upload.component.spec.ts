@@ -1,15 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
-import { UploadComponent } from './upload.component';
-import { RootStoreModule } from './../../root-store/root-store.module';
+import { InMemoryDataService } from './../../in-mem/in-memory-data.service';
 import { RootStoreState } from './../../root-store';
 import { MemoStoreActions } from './../../root-store/memo-store';
-import { InMemoryDataService } from './../../in-mem/in-memory-data.service';
+import { RootStoreModule } from './../../root-store/root-store.module';
+import { UploadComponent } from './upload.component';
 
 describe('UploadComponent', () => {
   let component: UploadComponent;

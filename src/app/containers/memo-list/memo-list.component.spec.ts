@@ -1,11 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
-import { MemoListComponent } from './memo-list.component';
-import { RootStoreModule } from './../../root-store/root-store.module';
 import { InMemoryDataService } from './../../in-mem/in-memory-data.service';
+import { RootStoreModule } from './../../root-store/root-store.module';
+import { MemoListComponent } from './memo-list.component';
 
 describe('MemoListComponent', () => {
   let component: MemoListComponent;

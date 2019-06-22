@@ -1,5 +1,5 @@
-import { ActionUnion, ActionTypes } from './actions';
-import { State, initialState } from './state';
+import { ActionTypes, ActionUnion } from './actions';
+import { initialState, State } from './state';
 
 export function memoReducer(
   state: State = initialState,
