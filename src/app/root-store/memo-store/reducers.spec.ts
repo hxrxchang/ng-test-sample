@@ -1,8 +1,8 @@
 import {
-  FetchMemoListRequestAction,
-  FetchMemoListSuccessAction,
   AddMemoRequestAction,
-  AddMemoSuccessAction
+  AddMemoSuccessAction,
+  FetchMemoListRequestAction,
+  FetchMemoListSuccessAction
 } from './actions';
 import { memoReducer } from './reducers';
 import { State } from './state';

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Store, select } from '@ngrx/store';
 
 import { Memo } from 'src/app/models/memo';
-import { MemoService } from './../../services/memo.service';
-import { RootStoreState } from './../../root-store';
 import { MemoStoreSelectors } from 'src/app/root-store/memo-store';
+import { RootStoreState } from './../../root-store';
 import { MemoStoreActions } from './../../root-store/memo-store';
+import { MemoService } from './../../services/memo.service';
 
 @Component({
   selector: 'app-memo-list',

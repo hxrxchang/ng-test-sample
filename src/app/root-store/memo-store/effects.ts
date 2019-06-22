@@ -4,8 +4,8 @@ import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { concatMap, map } from 'rxjs/operators';
 
-import * as MemoActions from './actions';
 import { MemoService } from './../../services/memo.service';
+import * as MemoActions from './actions';
 
 @Injectable()
 export class MemoEffects {

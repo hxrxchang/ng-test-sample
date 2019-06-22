@@ -1,12 +1,12 @@
-import { TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
+import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { cold, hot } from 'jasmine-marbles';
 import { Observable, of } from 'rxjs';
 
-import { MemoEffects } from './effects';
-import * as MemoActions from './actions';
 import { MemoService } from './../../services/memo.service';
+import * as MemoActions from './actions';
+import { MemoEffects } from './effects';
 
 describe('memo effects', () => {
   let effects: MemoEffects;

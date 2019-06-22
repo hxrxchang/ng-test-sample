@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StoreModule } from '@ngrx/store';
+import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 
-import { memoReducer } from './memo-store/reducers';
 import { MemoEffects } from './memo-store/effects';
+import { memoReducer } from './memo-store/reducers';
 
 @NgModule({
   declarations: [],
