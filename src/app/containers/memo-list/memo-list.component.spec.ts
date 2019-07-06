@@ -15,11 +15,7 @@ describe('MemoListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [MemoListComponent],
       schemas: [NO_ERRORS_SCHEMA],
-      imports: [
-        HttpClientModule,
-        RootStoreModule,
-        HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
-      ]
+      imports: [HttpClientModule, RootStoreModule, HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)],
     }).compileComponents();
   }));
 

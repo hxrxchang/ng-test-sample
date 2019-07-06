@@ -8,10 +8,6 @@ import { memoReducer } from './memo-store/reducers';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    StoreModule.forRoot({ memo: memoReducer }),
-    EffectsModule.forRoot([MemoEffects])
-  ]
+  imports: [CommonModule, StoreModule.forRoot({ memo: memoReducer }), EffectsModule.forRoot([MemoEffects])],
 })
 export class RootStoreModule {}

@@ -5,11 +5,11 @@ import * as uuidv1 from 'uuid';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
   uploadFromGroup = this.fb.group({
-    memoContent: ['', Validators.required]
+    memoContent: ['', Validators.required],
   });
   memoId: string = uuidv1();
 
@@ -23,7 +23,7 @@ export class FormComponent implements OnInit {
   clickButtton() {
     const memo = {
       id: this.memoId,
-      content: this.uploadFromGroup.value.memoContent
+      content: this.uploadFromGroup.value.memoContent,
     };
     this.upload.emit(memo);
     this.reset();

@@ -9,13 +9,10 @@ import { RootStoreState } from './../../root-store';
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.scss']
+  styleUrls: ['./upload.component.scss'],
 })
 export class UploadComponent implements OnInit {
-  constructor(
-    private fb: FormBuilder,
-    private store: Store<RootStoreState.State>
-  ) {}
+  constructor(private fb: FormBuilder, private store: Store<RootStoreState.State>) {}
 
   ngOnInit() {}
 

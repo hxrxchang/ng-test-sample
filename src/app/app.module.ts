@@ -33,7 +33,7 @@ import { TopComponent } from './pages/top/top.component';
     FormComponent,
     ButtonComponent,
     MemoItemComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,12 +43,12 @@ import { TopComponent } from './pages/top/top.component';
     HttpClientModule,
     ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      passThruUnknownUrl: true
+      passThruUnknownUrl: true,
     }),
     RootStoreModule,
-    StoreDevtoolsModule.instrument({})
+    StoreDevtoolsModule.instrument({}),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -11,14 +11,11 @@ import { MemoService } from './../../services/memo.service';
 @Component({
   selector: 'app-memo-list',
   templateUrl: './memo-list.component.html',
-  styleUrls: ['./memo-list.component.scss']
+  styleUrls: ['./memo-list.component.scss'],
 })
 export class MemoListComponent implements OnInit {
   memoList$: Observable<Memo[]>;
-  constructor(
-    private memoService: MemoService,
-    private store: Store<RootStoreState.State>
-  ) {}
+  constructor(private memoService: MemoService, private store: Store<RootStoreState.State>) {}
 
   ngOnInit() {
     this.store.dispatch(new MemoStoreActions.FetchMemoListRequestAction());

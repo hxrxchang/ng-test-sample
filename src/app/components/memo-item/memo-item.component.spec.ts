@@ -8,7 +8,7 @@ describe('MemoItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MemoItemComponent]
+      declarations: [MemoItemComponent],
     }).compileComponents();
   }));
 

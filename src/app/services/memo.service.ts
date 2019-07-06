@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { Memo } from './../models/memo';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MemoService {
   constructor(private http: HttpClient) {}

@@ -1,15 +1,10 @@
-import {
-  AddMemoRequestAction,
-  AddMemoSuccessAction,
-  FetchMemoListRequestAction,
-  FetchMemoListSuccessAction
-} from './actions';
+import { AddMemoRequestAction, AddMemoSuccessAction, FetchMemoListRequestAction, FetchMemoListSuccessAction } from './actions';
 import { memoReducer } from './reducers';
 import { State } from './state';
 
 describe('memoReducer', () => {
   const state: State = {
-    memoList: []
+    memoList: [],
   };
 
   it('FetchMemoListRequestAction', () => {
@@ -17,13 +12,8 @@ describe('memoReducer', () => {
   });
 
   it('FetchMemoListSuccessAction', () => {
-    const memoList = [
-      { id: '1', content: 'hello' },
-      { id: '2', content: 'goobye' }
-    ];
-    expect(
-      memoReducer(state, new FetchMemoListSuccessAction(memoList))
-    ).toEqual({ memoList });
+    const memoList = [{ id: '1', content: 'hello' }, { id: '2', content: 'goobye' }];
+    expect(memoReducer(state, new FetchMemoListSuccessAction(memoList))).toEqual({ memoList });
   });
 
   it('AddMemoRequestAction', () => {
@@ -35,7 +25,7 @@ describe('memoReducer', () => {
     const memo = { id: '1', content: 'hello' };
     expect(memoReducer(state, new AddMemoSuccessAction(memo))).toEqual({
       ...state,
-      memoList: [...state.memoList, memo]
+      memoList: [...state.memoList, memo],
     });
   });
 });

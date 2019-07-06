@@ -14,7 +14,7 @@ describe('FormComponent', () => {
       declarations: [FormComponent],
       schemas: [NO_ERRORS_SCHEMA],
       imports: [ReactiveFormsModule],
-      providers: [{ provide: FormBuilder, useValue: formBuilder }]
+      providers: [{ provide: FormBuilder, useValue: formBuilder }],
     }).compileComponents();
   }));
 
@@ -30,12 +30,12 @@ describe('FormComponent', () => {
 
   it('should call clickButtton() method', () => {
     component.uploadFromGroup = formBuilder.group({
-      memoContent: ['hello', Validators.required]
+      memoContent: ['hello', Validators.required],
     });
     component.memoId = '12345';
     const memo = {
       id: '12345',
-      content: 'hello'
+      content: 'hello',
     };
     spyOn(component.upload, 'emit');
     spyOn(component, 'reset');

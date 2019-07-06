@@ -20,12 +20,7 @@ describe('UploadComponent', () => {
     TestBed.configureTestingModule({
       declarations: [UploadComponent],
       schemas: [NO_ERRORS_SCHEMA],
-      imports: [
-        ReactiveFormsModule,
-        RootStoreModule,
-        HttpClientModule,
-        HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
-      ]
+      imports: [ReactiveFormsModule, RootStoreModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)],
     }).compileComponents();
   }));
 
@@ -44,11 +39,9 @@ describe('UploadComponent', () => {
   it('should call upload() method', () => {
     const memo = {
       id: '12345',
-      content: 'hello'
+      content: 'hello',
     };
-    const addMemoRequestAction = new MemoStoreActions.AddMemoRequestAction(
-      memo
-    );
+    const addMemoRequestAction = new MemoStoreActions.AddMemoRequestAction(memo);
     component.upload(memo);
     expect(store.dispatch).toHaveBeenCalledWith(addMemoRequestAction);
   });

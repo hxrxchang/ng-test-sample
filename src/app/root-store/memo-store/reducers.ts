@@ -1,10 +1,7 @@
 import { ActionTypes, ActionUnion } from './actions';
 import { initialState, State } from './state';
 
-export function memoReducer(
-  state: State = initialState,
-  action: ActionUnion
-): State {
+export function memoReducer(state: State = initialState, action: ActionUnion): State {
   switch (action.type) {
     case ActionTypes.FETCH_MEMO_LIST_REQUEST:
       return state;
@@ -15,7 +12,7 @@ export function memoReducer(
     case ActionTypes.ADD_MEMO_SUCCESS:
       return {
         ...state,
-        memoList: [...state.memoList, action.payload]
+        memoList: [...state.memoList, action.payload],
       };
     default:
       return state;

@@ -16,7 +16,7 @@ describe('memo effects', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      providers: [MemoEffects, MemoService, provideMockActions(() => actions)]
+      providers: [MemoEffects, MemoService, provideMockActions(() => actions)],
     });
 
     effects = TestBed.get(MemoEffects);

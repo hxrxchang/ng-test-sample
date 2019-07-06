@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Memo } from './../models/memo';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InMemoryDataService {
   createDb() {

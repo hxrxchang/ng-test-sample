@@ -5,8 +5,8 @@ import { MemoService } from './memo.service';
 describe('MemoService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      imports: [HttpClientModule]
-    })
+      imports: [HttpClientModule],
+    }),
   );
 
   it('should be created', () => {

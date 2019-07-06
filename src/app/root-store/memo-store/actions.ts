@@ -5,7 +5,7 @@ export enum ActionTypes {
   FETCH_MEMO_LIST_REQUEST = '[Memo] Fetch Memo List Request',
   FETCH_MEMO_LIST_SUCCESS = '[Memo] Fettch Memo List Success',
   ADD_MEMO_REQUEST = '[Memo] Add Memo Request',
-  ADD_MEMO_SUCCESS = '[Memo] Add Memo Success'
+  ADD_MEMO_SUCCESS = '[Memo] Add Memo Success',
 }
 
 export class FetchMemoListRequestAction implements Action {
@@ -27,8 +27,4 @@ export class AddMemoSuccessAction implements Action {
   constructor(public payload: Memo) {}
 }
 
-export type ActionUnion =
-  | FetchMemoListRequestAction
-  | FetchMemoListSuccessAction
-  | AddMemoRequestAction
-  | AddMemoSuccessAction;
+export type ActionUnion = FetchMemoListRequestAction | FetchMemoListSuccessAction | AddMemoRequestAction | AddMemoSuccessAction;
